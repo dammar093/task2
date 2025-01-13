@@ -55,104 +55,117 @@ const Home = () => {
   };
 
   return (
-    <section className={`${styles.home} w-7xl`}>
-      {data?.map((course) => (
-        <div key={course.id}>
-          {course.isActive ? (
-            <motion.div
-              className="w-[592px] h-[461px] rounded-3xl relative overflow-hidden"
-              onClick={() => handleClick(course.id)}
-            >
+    <section className="w-full min-h-svh max-w-7xl">
+      <div className="px-10">
+        <p className="text-[24px] text-[#414141]">
+          Explore our classes and master trending skills!
+        </p>
+        <h1 className="text-[32px] font-[700] ">
+          Dive Into{" "}
+          <span className="text-[#1DA077]"> What’s Hot Right Now! 🔥</span>
+        </h1>
+      </div>
+      <div className={`${styles.home}`}>
+        {data?.map((course) => (
+          <div key={course.id}>
+            {course.isActive ? (
               <motion.div
-                initial={{
-                  clipPath: "circle(0% at 100% 0%)",
-                }}
-                animate={{
-                  clipPath: "circle(150% at 50% 50%)",
-                }}
-                exit={{
-                  clipPath: "circle(0% at 0% 100%)",
-                }}
-                transition={{
-                  duration: 0.5,
-                  ease: "easeInOut",
-                }}
-                className="absolute bg-red w-full h-full z-10"
+                className="w-[592px] h-[461px] rounded-3xl relative overflow-hidden"
+                onClick={() => handleClick(course.id)}
               >
-                <div className="w-full h-full ">
-                  <div
-                    className="flex items-center gap-2 cursor-pointer justify-end text-white text-[18px] font-[600] h-[61px] p-4"
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
-                  >
-                    View all course
-                    <motion.div
-                      animate={isHovered ? { x: [0, 3, -3, 0] } : { x: 0 }}
-                      transition={{ duration: 1, repeat: Infinity }}
+                <motion.div
+                  initial={{
+                    clipPath: "circle(0% at 100% 0%)",
+                  }}
+                  animate={{
+                    clipPath: "circle(150% at 50% 50%)",
+                  }}
+                  exit={{
+                    clipPath: "circle(0% at 0% 100%)",
+                  }}
+                  transition={{
+                    duration: 0.5,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute bg-red w-full h-full z-10"
+                >
+                  <div className="w-full h-full ">
+                    <div
+                      className="flex items-center gap-2 cursor-pointer justify-end text-white text-[18px] font-[600] h-[61px] p-4"
+                      onMouseEnter={() => setIsHovered(true)}
+                      onMouseLeave={() => setIsHovered(false)}
                     >
-                      <FaArrowRight />
-                    </motion.div>
-                  </div>
-                  <motion.div
-                    key={course.id}
-                    initial={
-                      direction === "left" ? { x: "-100%" } : { x: "100%" }
-                    }
-                    animate={{ x: 0 }}
-                    exit={direction === "left" ? { x: "100%" } : { x: "-100%" }}
-                    transition={{ duration: 0.5 }}
-                    className="flex gap-[42px] justify-center items-center h-[200px]"
-                  >
-                    <img src={react} className="w-[75px] h-[75px]" alt="" />
-                    <img src={like} className="w-[75px] h-[75px]" alt="" />
-                    <img src={vue} className="w-[75px] h-[75px]" alt="" />
-                    <img src={pencil} className="w-[75px] h-[75px]" alt="" />
-                  </motion.div>
-                  <motion.div className="w-full flex justify-center items-center h-[200px] px-10">
-                    <div className="w-1/2 relative">
-                      <div className="text-white text-[150px] font-[700] text-center">
-                        {course?.count}
-                      </div>
-                      <p className="absolute top-0 right-3 text-white text-[64px] font-[700]">
-                        +
-                      </p>
+                      View all course
+                      <motion.div
+                        animate={isHovered ? { x: [0, 3, -3, 0] } : { x: 0 }}
+                        transition={{ duration: 1, repeat: Infinity }}
+                      >
+                        <FaArrowRight />
+                      </motion.div>
                     </div>
                     <motion.div
-                      className="w-1/2 text-start"
-                      initial={{ rotate: -90, y: -200, x: -100 }}
-                      animate={{ rotate: 0, y: 0, x: 0 }}
+                      key={course.id}
+                      initial={
+                        direction === "left" ? { x: "-100%" } : { x: "100%" }
+                      }
+                      animate={{ x: 0 }}
+                      exit={
+                        direction === "left" ? { x: "100%" } : { x: "-100%" }
+                      }
                       transition={{ duration: 0.5 }}
+                      className="flex gap-[42px] justify-center items-center h-[200px]"
                     >
-                      <h2 className="text-[32px] font-[700] text-white">
-                        {course?.title}
-                      </h2>
-                      <p className="text-white text-[18px] font-[400]">
-                        {course?.description}
-                      </p>
+                      <img src={react} className="w-[75px] h-[75px]" alt="" />
+                      <img src={like} className="w-[75px] h-[75px]" alt="" />
+                      <img src={vue} className="w-[75px] h-[75px]" alt="" />
+                      <img src={pencil} className="w-[75px] h-[75px]" alt="" />
                     </motion.div>
-                  </motion.div>
+                    <motion.div className="w-full flex justify-center items-center h-[200px] px-10">
+                      <div className="w-1/2 relative">
+                        <div className="text-white text-[150px] font-[700] text-center">
+                          {course?.count}
+                        </div>
+                        <p className="absolute top-0 right-3 text-white text-[64px] font-[700]">
+                          +
+                        </p>
+                      </div>
+                      <motion.div
+                        className="w-1/2 text-start"
+                        initial={{ rotate: -90, y: -200, x: -100 }}
+                        animate={{ rotate: 0, y: 0, x: 0 }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        <h2 className="text-[32px] font-[700] text-white">
+                          {course?.title}
+                        </h2>
+                        <p className="text-white text-[18px] font-[400]">
+                          {course?.description}
+                        </p>
+                      </motion.div>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              </motion.div>
+            ) : (
+              <motion.div
+                className={styles.card}
+                onClick={() => handleClick(course.id)}
+              >
+                <div className={styles.descriptionContainer}>
+                  <div className={styles.textWrapper}>
+                    <h2 className={styles.title}>{course?.title}</h2>
+                    <p className={styles.description}>{course?.description}</p>
+                  </div>
+                </div>
+                <div className={styles.heading}>
+                  <div>{course?.count}</div>
+                  <div className={styles.plus}>+</div>
                 </div>
               </motion.div>
-            </motion.div>
-          ) : (
-            <motion.div
-              className={styles.card}
-              onClick={() => handleClick(course.id)}
-            >
-              <div className={styles.descriptionContainer}>
-                <div className={styles.textWrapper}>
-                  <h2 className={styles.title}>{course?.title}</h2>
-                  <p className={styles.description}>{course?.description}</p>
-                </div>
-              </div>
-              <div className={styles.heading}>
-                <div>{course?.count}</div>
-                <div className={styles.plus}>+</div>
-              </div>
-            </motion.div>
-          )}
-        </div>
-      ))}
+            )}
+          </div>
+        ))}
+      </div>
     </section>
   );
 };
