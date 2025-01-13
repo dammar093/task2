@@ -1,8 +1,13 @@
-# React + Vite
+# Task2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## How to run the task
 
-Currently, two official plugins are available:
+- Open terminal or command prompt
+- Clone the repository using git command ` git clone https://github.com/dammar093/task2.git`
+- Change direcoty using command `cd task2`
+- Install dependencies using command `npm i ` or `npm install`
+- Run the task using command `npm run dev`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live demo
+
+https://task2-kohl-nine.vercel.app/
