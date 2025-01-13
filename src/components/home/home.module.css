@@ -1,0 +1,76 @@
+.home{
+  width: 100%;
+  min-height:100svh ;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+.card {
+  background-color: #f9ebec;
+  width: 280px;
+  height: 461px;
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ecllipse {
+  border-radius: 32px;
+}
+
+.descriptionContainer {
+  flex: 2;
+  color: #c33241;
+  height: 76px;
+  width: 218px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(-90deg);
+}
+
+.textWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.description {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.description::first-letter {
+  text-transform: uppercase;
+}
+
+.heading {
+  flex: 1;
+  font-size: 150px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  color: #c33241;
+  height: 180px;
+  width: 209px;
+}
+
+.plus {
+  font-size: 64px;
+  position: absolute;
+  top: -10px;
+  right: 6px;
+}
